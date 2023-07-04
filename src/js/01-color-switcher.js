@@ -9,14 +9,21 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
 }
 
-btnStart.addEventListener('click', onclick);
+btnStart.addEventListener('click', onStart);
 
-function onclick(e) {
-     e.target.dataset.disabled = true;
+function onStart(e) {
+  e.target.disabled = true;
+  console.log(e);
     const timerId = setInterval(() => {
         body.style.backgroundColor = getRandomHexColor()
-   
     }, 1000); 
     console.dir(btnStart);
-    
+  btnStop.addEventListener('click', (e) => {
+    clearInterval(timerId);
+    btnStart.disabled = false;
+  console.log(e)
+});  
 }
+
+
+
