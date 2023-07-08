@@ -11,6 +11,9 @@ const selectors = {
     minutes: document.querySelector('span[data-minutes]'),
     seconds: document.querySelector('span[data-seconds]')
 }
+
+selectors.btn.disabled = true;
+
 let startTime = 0;
 const options = {
   enableTime: true,
@@ -20,8 +23,8 @@ const options = {
 
     onClose(selectedDates) {
       if (selectedDates[0] <= new Date()) {
-        selectors.btn.disabled = true;
-      Notiflix.Notify.failure('Please choose a date in the future');
+        Notiflix.Notify.failure('Please choose a date in the future');
+        return;
     } else {
       startTime = selectedDates[0].getTime();
       selectors.btn.removeAttribute('disabled');
