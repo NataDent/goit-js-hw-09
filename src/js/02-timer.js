@@ -7,9 +7,9 @@ const selectors = {
     input: document.querySelector('#datetime-picker'),
     btn: document.querySelector('button[data-start]'),
     days: document.querySelector('span[data-days]'),
-    hrs: document.querySelector('span[data-hours]'),
-    min: document.querySelector('span[data-minutes]'),
-    sec: document.querySelector('span[data-seconds]')
+    hours: document.querySelector('span[data-hours]'),
+    minutes: document.querySelector('span[data-minutes]'),
+    seconds: document.querySelector('span[data-seconds]')
 }
 
 const options = {
@@ -20,25 +20,27 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
   },
-};
-selectors.input.value = '';
-  
+}; 
   const fp = flatpickr(selectors.input, options);
 
   selectors.btn.addEventListener('click', onClick);
 
-function onClick() {
-  const targetDate = new Date(selectors.input.value);
-  const currentDate = new Date();
-  const leftTime = targetDate.getTime() - currentDate.getTime();
- 
-if (targetDate <= currentDate) {
-  window.alert('Please choose a date in the future')
-  return;
-  } 
-  const timer = setInterval(() => {
-    
-  }, 1000)
+function onClick(e) {
+  selectors.input.value = '';
+  if (fp.selectedDates[0] <= Date.now()) {
+    e.target.disabled = true;
+    window.alert('Please choose a date in the future')
+  }
+  e.target.disabled = false;
+    const timer = setInterval(() => {
+    const leftTime = fp.selectedDates[0].getTime() - Date.now();
+      convertMs(leftTime);
+      selectors.days.textContent = days;
+      selectors.hours.textContent = hours;
+      selectors.minutes.textContent = minutes;
+      selectors.seconds.textContent = seconds;
+    }, 1000)
+  
 } 
 
 

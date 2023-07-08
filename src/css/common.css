@@ -19,10 +19,21 @@ img {
 .timer {
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 24px;
   margin-top: 24px;
   font-weight: 600;
 }
 .value {
-  font-size: 24;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  font-size: 48;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  text-align: center;
 }
