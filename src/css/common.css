@@ -20,14 +20,14 @@ img {
   display: flex;
   flex-direction: row;
   gap: 24px;
-  margin-top: 24px;
+  margin: auto 24px;
   font-weight: 600;
 }
 .value {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 64px;
+  width: 76px;
   font-size: 48;
 }
 .field {
