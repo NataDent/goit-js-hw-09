@@ -24,6 +24,7 @@ const options = {
     onClose(selectedDates) {
       if (selectedDates[0] <= new Date()) {
         Notiflix.Notify.failure('Please choose a date in the future');
+        
         return;
     } else {
       startTime = selectedDates[0].getTime();
@@ -37,9 +38,7 @@ const options = {
   selectors.btn.addEventListener('click', onClick);
 
 function onClick() {
-  if (selectors.input.value <= new Date) {
-    return
-  }
+  
   
   selectors.input.value = '';
 
@@ -55,14 +54,13 @@ function onClick() {
     const minutes = time.minutes;
     const seconds = time.seconds;
 
-    selectors.days.textContent = days.toString().padStart(3,0);
+    selectors.days.textContent = days.toString().padStart(2,0);
     selectors.hours.textContent = hours.toString().padStart(2,0);
     selectors.minutes.textContent = minutes.toString().padStart(2,0);
-    selectors.seconds.textContent = seconds.toString().padStart(2,0);
+    selectors.seconds.textContent = seconds.toString().padStart(2, 0);
 
-    
     }, 1000)
-  
+ 
 } 
 
 
