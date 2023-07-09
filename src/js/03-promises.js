@@ -31,3 +31,5 @@ promise
     .then(Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`))
     .catch(Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)); 
 }
+
+// Doesn't work/ Why?
