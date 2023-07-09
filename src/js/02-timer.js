@@ -58,15 +58,14 @@ function onClick() {
     selectors.hours.textContent = hours.toString().padStart(2,0);
     selectors.minutes.textContent = minutes.toString().padStart(2,0);
     selectors.seconds.textContent = seconds.toString().padStart(2, 0);
-    if (leftTime <= 0) {
+
+    if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
       clearInterval(timer);
       return;
  }
     }, 1000)
  
 } 
-
-
 
 function convertMs(ms) {
   
