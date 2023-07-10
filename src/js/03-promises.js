@@ -6,7 +6,8 @@ const form = document.querySelector('.form');
 form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
-    const delay = e.currentTarget.elements.delay.value; 
+    e.preventDefault();
+    let delay = e.currentTarget.elements.delay.value; 
     const amount = e.currentTarget.elements.amount.value;
     const step = e.currentTarget.elements.step;
 
