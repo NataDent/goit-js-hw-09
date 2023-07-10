@@ -1,9 +1,9 @@
 import Notiflix from 'notiflix';
 
-const formEl = document.querySelector('.form');
+const form = document.querySelector('.form');
 
 
-formEl.addEventListener('submit', onSubmit);
+form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
     const delay = e.currentTarget.elements.delay.value; 
