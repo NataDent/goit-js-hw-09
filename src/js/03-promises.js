@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 
 const formEl = document.querySelector('.form');
-console.dir(formEl)
+
 
 formEl.addEventListener('submit', onSubmit);
 
